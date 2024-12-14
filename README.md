@@ -9,6 +9,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0435-non-overlapping-intervals](https://github.com/ManoMJ/leetcode/tree/master/0435-non-overlapping-intervals) |
+| [1236-n-th-tribonacci-number](https://github.com/ManoMJ/leetcode/tree/master/1236-n-th-tribonacci-number) |
 ## Greedy
 |  |
 | ------- |
@@ -39,4 +40,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/ManoMJ/leetcode/tree/master/0017-letter-combinations-of-a-phone-number) |
+## Math
+|  |
+| ------- |
+| [1236-n-th-tribonacci-number](https://github.com/ManoMJ/leetcode/tree/master/1236-n-th-tribonacci-number) |
+## Memoization
+|  |
+| ------- |
+| [1236-n-th-tribonacci-number](https://github.com/ManoMJ/leetcode/tree/master/1236-n-th-tribonacci-number) |
 <!---LeetCode Topics End-->
