@@ -16,13 +16,15 @@ class Solution:
 
         results = []
 
-        def backtrack(combination, i):
-            if i == len(digits):
-                results.append(combination)
+        def backtrack(combinations, i):
+            if len(combinations) == len(digits):
+                results.append("".join(combinations))
                 return
             
             for s in phone[digits[i]]:
-                backtrack(combination + s, i+1)
-
-        backtrack("", 0)
+                combinations.append(s)
+                backtrack(combinations, i+1)
+                combinations.pop()
+        
+        backtrack([], 0)
         return results
