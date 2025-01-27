@@ -33,6 +33,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/ManoMJ/leetcode/tree/master/0017-letter-combinations-of-a-phone-number) |
 | [0208-implement-trie-prefix-tree](https://github.com/ManoMJ/leetcode/tree/master/0208-implement-trie-prefix-tree) |
+| [0345-reverse-vowels-of-a-string](https://github.com/ManoMJ/leetcode/tree/master/0345-reverse-vowels-of-a-string) |
 ## Design
 |  |
 | ------- |
@@ -66,4 +67,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0374-guess-number-higher-or-lower](https://github.com/ManoMJ/leetcode/tree/master/0374-guess-number-higher-or-lower) |
+## Two Pointers
+|  |
+| ------- |
+| [0345-reverse-vowels-of-a-string](https://github.com/ManoMJ/leetcode/tree/master/0345-reverse-vowels-of-a-string) |
 <!---LeetCode Topics End-->
