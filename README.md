@@ -5,6 +5,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0198-house-robber](https://github.com/ManoMJ/leetcode/tree/master/0198-house-robber) |
+| [0238-product-of-array-except-self](https://github.com/ManoMJ/leetcode/tree/master/0238-product-of-array-except-self) |
 | [0435-non-overlapping-intervals](https://github.com/ManoMJ/leetcode/tree/master/0435-non-overlapping-intervals) |
 | [0605-can-place-flowers](https://github.com/ManoMJ/leetcode/tree/master/0605-can-place-flowers) |
 | [1528-kids-with-the-greatest-number-of-candies](https://github.com/ManoMJ/leetcode/tree/master/1528-kids-with-the-greatest-number-of-candies) |
@@ -76,4 +77,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0345-reverse-vowels-of-a-string](https://github.com/ManoMJ/leetcode/tree/master/0345-reverse-vowels-of-a-string) |
 | [1894-merge-strings-alternately](https://github.com/ManoMJ/leetcode/tree/master/1894-merge-strings-alternately) |
+## Prefix Sum
+|  |
+| ------- |
+| [0238-product-of-array-except-self](https://github.com/ManoMJ/leetcode/tree/master/0238-product-of-array-except-self) |
 <!---LeetCode Topics End-->
