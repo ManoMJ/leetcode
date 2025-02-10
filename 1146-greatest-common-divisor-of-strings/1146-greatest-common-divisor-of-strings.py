@@ -1,19 +1,12 @@
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
+        def gcd(a, b):
+            print(a, b)
+            if a==b or a==0 or b==0:
+                return a
+            return gcd(b, a%b)
+        
         if str1+str2 != str2+str1:
             return ''
-
-        n = len(str1)
-        m = len(str2)
-
-        smaller = n if n < m else m
+        return str1[:gcd(len(str1), len(str2))]
         
-        if n == 1 or m ==1:
-            return str1[:smaller]
-        
-        i = 2
-        for i in range(smaller, 1, -1):
-            if n%i==0 and m%i==0:
-                break
-        return str1[:i]
-
