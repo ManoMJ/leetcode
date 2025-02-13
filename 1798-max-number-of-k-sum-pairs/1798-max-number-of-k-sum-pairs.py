@@ -1,17 +1,18 @@
+from collections import Counter 
+
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
-        nums.sort()
-        l, r = 0, len(nums)-1
-        result = 0
+        count = Counter(nums)
+        answer = 0
 
-        while l<r:
-            if nums[l] + nums[r] > k:
-                r -= 1
-            elif nums[l] + nums[r] < k:
-                l += 1
-            else:
-                l += 1
-                r -= 1
-                result += 1
-        return result
-        
+        for num in count.keys():
+            supplement = k - num
+            if supplement == num:
+                answer += count[num]//2
+            elif supplement in count.keys():
+                add = min(count[num], count[supplement])
+                answer += add
+                count[supplement] -= add
+            count[num] = 0
+            
+        return answer
