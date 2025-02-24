@@ -1,11 +1,8 @@
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
         vowels = set({'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'})
-        cnt = 0
+        cnt = sum(1 for i in range(k) if s[i] in vowels)
 
-        for i in range(k):
-            if s[i] in vowels:
-                cnt += 1
         answer = cnt
         for i in range(k, len(s)):
             if s[i] in vowels:
