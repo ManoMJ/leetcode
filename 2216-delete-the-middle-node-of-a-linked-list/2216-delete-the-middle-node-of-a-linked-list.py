@@ -7,6 +7,7 @@ class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
         pointer = head.next
+        print(head.val)
         length = 0
         while pointer:
             length += 1
