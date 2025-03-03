@@ -72,6 +72,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0208-implement-trie-prefix-tree](https://github.com/ManoMJ/leetcode/tree/master/0208-implement-trie-prefix-tree) |
+| [0969-number-of-recent-calls](https://github.com/ManoMJ/leetcode/tree/master/0969-number-of-recent-calls) |
 ## Trie
 |  |
 | ------- |
@@ -153,9 +154,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0649-dota2-senate](https://github.com/ManoMJ/leetcode/tree/master/0649-dota2-senate) |
+| [0969-number-of-recent-calls](https://github.com/ManoMJ/leetcode/tree/master/0969-number-of-recent-calls) |
 ## Linked List
 |  |
 | ------- |
 | [0328-odd-even-linked-list](https://github.com/ManoMJ/leetcode/tree/master/0328-odd-even-linked-list) |
 | [2216-delete-the-middle-node-of-a-linked-list](https://github.com/ManoMJ/leetcode/tree/master/2216-delete-the-middle-node-of-a-linked-list) |
+## Data Stream
+|  |
+| ------- |
+| [0969-number-of-recent-calls](https://github.com/ManoMJ/leetcode/tree/master/0969-number-of-recent-calls) |
 <!---LeetCode Topics End-->
