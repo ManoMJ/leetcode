@@ -1,34 +1,38 @@
-from collections import Counter
+from collections import Counter 
 
 class Solution:
     def closeStrings(self, word1: str, word2: str) -> bool:
-        if len(word1) != len(word2):
+        counter1 = Counter(word1)
+        counter2 = Counter(word2)
+
+        set1 = set()
+        set2 = set()
+
+        for c in word1:
+            set1.add(c)
+        for c in word2:
+            set2.add(c)
+
+        if set1 != set2:
             return False
-
-        count1 = Counter(word1)
-        count2 = Counter(word2)
-
-        letter_set1 = set()
-        letter_set2 = set()
         dict1 = {}
         dict2 = {}
-
-        for n in count1:
-            if count1[n] in dict1:
-                dict1[count1[n]] += 1
+        for v in counter1.values():
+            if v in dict1:
+                dict1[v] += 1
             else:
-                dict1[count1[n]] = 1
-            letter_set1.add(n)
-
-        for n in count2:
-            if count2[n] in dict2:
-                dict2[count2[n]] += 1
+                dict1[v] = 1
+        for v in counter2.values():
+            if v in dict2:
+                dict2[v] += 1
             else:
-                dict2[count2[n]] = 1
-            letter_set2.add(n)
+                dict2[v] = 1
 
-        if letter_set1==letter_set2 and dict1==dict2:
-            return True
-        else:
-            return False
         
+
+        for k in dict1.keys():
+            if k not in dict2 or dict1[k] != dict2[k]:
+                return False
+
+
+        return True        
