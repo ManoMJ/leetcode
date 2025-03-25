@@ -1,18 +1,12 @@
+from collections import Counter
+
 class Solution:
     def equalPairs(self, grid: List[List[int]]) -> int:
-        answer = 0
-        columns = [[] for i in range(len(grid)) ]
-        
-        i = 0
-        for row in grid:
-            while i < len(grid):
-                columns[i].append(row[i])
-                i+=1
-            i=0
-        
-        for row in grid:
-            for column in columns:
-                if row == column:
-                    answer += 1
-        return answer
-            
+        unique_rows = Counter(tuple(row) for row in grid)
+        transposed = Counter(list(zip(*grid)))
+
+        result = 0
+        for row in unique_rows.keys():
+            if row in transposed:
+                result += (unique_rows[row] * transposed[row])
+        return result
