@@ -1,24 +1,24 @@
-class Solution:
-    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+class Solution(object):
+    def asteroidCollision(self, asteroids):
+        """
+        :type asteroids: List[int]
+        :rtype: List[int]
+        """
         stack = []
-        for asteroid in asteroids:
-            # Process the current asteroid
-            while stack and asteroid < 0 and stack[-1] > 0:
-                top = stack[-1]
-
-                # Case 1 : stack[-1] explodes
-                if abs(top) < abs(asteroid):
+        # Process the current asteroid
+        for i in range(len(asteroids)):
+            while  asteroids[i] < 0 and stack and stack[-1] > 0:
+                # Case 1 : stack[-1] explodes:
+                if abs(stack[-1]) < abs(asteroids[i]):
                     stack.pop()
                     continue
-                
-                # Case 2 : Both explode
-                if abs(top) == abs(asteroid):
-                    stack.pop()
 
-                # Case 3 : asteroid explods (do not add it to the stack)
+                # Case 2 : Both explode
+                if abs(stack[-1]) == abs(asteroids[i]):
+                    stack.pop()
                 break
+
             else:
-                # If no collision occurred, pusth the asteroid
-                stack.append(asteroid)
+                stack.append(asteroids[i])
             
         return stack
