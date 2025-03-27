@@ -15,12 +15,7 @@ class Solution(object):
                 return 0
             
             mx = max(root.val, mx)
-            result = 0
-            if mx == root.val:
-                result = 1
-            if root:
-                print(root.val)
-            return maxTraverse(root.left, mx) + maxTraverse(root.right, mx) + result
+            return maxTraverse(root.left, mx) + maxTraverse(root.right, mx) + (1 if mx==root.val else 0)
 
         if not root:
             return 0
