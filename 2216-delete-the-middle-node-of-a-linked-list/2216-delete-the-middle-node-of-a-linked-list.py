@@ -1,30 +1,27 @@
 # Definition for singly-linked list.
-# class ListNode:
+# class ListNode(object):
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-class Solution:
-    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+class Solution(object):
+    def deleteMiddle(self, head):
+        """
+        :type head: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
+        if not head:
+            return head
+        
+        odd = head
+        even = head.next
 
-        pointer = head.next
-        print(head.val)
-        length = 0
-        while pointer:
-            length += 1
-            pointer = pointer.next
-        
-        if length < 1:
+        if not even:
             return None
-        middle = int((length+1) / 2)
-        
-        current = head
-        length = 0
-        prev = None
-        while length < middle:
-            prev = current
-            current = current.next
-            length += 1
-        
-        prev.next = current.next
+
+        while even.next and even.next.next:
+            odd = odd.next
+            even = even.next.next
+
+        odd.next = odd.next.next
 
         return head
