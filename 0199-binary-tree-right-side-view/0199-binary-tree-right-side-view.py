@@ -28,8 +28,6 @@ class Solution(object):
             if top.right:
                 q.append( (top.right, depth+1) )
 
-        print(q)
-        print(dic)
         for k in dic.keys():
             result.append(dic[k][-1])
         return result
