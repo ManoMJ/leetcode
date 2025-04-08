@@ -1,34 +1,23 @@
-class Solution:
-    def decodeString(self, s: str) -> str:
+class Solution(object):
+    def decodeString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        current_ch = ''
+        current_num = 0
         stack = []
-        pointer = 0
-        while pointer < len(s):
-            if s[pointer] == '[':
-                pointer += 1
-                continue
-            elif s[pointer] == ']':
-                pointer += 1
-                text = ''
-                while stack[-1].isalpha():
-                    text = stack.pop() + text
-
-                stack.append(text * int(stack.pop()))
+        for ch in s:
+            if ch.isdigit():
+                current_num = current_num*10 + int(ch)
+            elif ch=='[':
+                stack.append( (current_ch, current_num) )
+                current_ch = ''
+                current_num = 0
+            elif ch==']':
+                prev_ch, rp_cnt = stack.pop()
+                current_ch = prev_ch + (current_ch * rp_cnt)
             else:
-                text = ''
-                while pointer < len(s) and s[pointer].isalpha():
-                    text += s[pointer]
-                    pointer += 1
-                if text:
-                    stack.append(text)
-
-                number = ''
-                while pointer < len(s) and s[pointer].isdigit():
-                    number += s[pointer]
-                    pointer += 1
-                if number:
-                    stack.append(number)
-            print(stack)
-
-        return "".join(stack)
-
-
+                current_ch += ch
+        
+        return current_ch
