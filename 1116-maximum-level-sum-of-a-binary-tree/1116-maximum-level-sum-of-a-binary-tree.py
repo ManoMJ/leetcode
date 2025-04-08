@@ -8,27 +8,32 @@ from collections import defaultdict
 #         self.right = right
 class Solution(object):
     def maxLevelSum(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: int
-        """
-        sums = list([])
-        queue = deque([(root, 0)])
-        
+        if not root:
+            return 0
 
-        while queue:
-            node, depth = queue.popleft()
+        q = deque([root])
+        max_sum = root.val
+        answer = 1
+        cur_level = 1
+
+        while q:
+            q_len = len(q)
+            cur_sum = 0
+
+            for _ in range(q_len):
+                node = q.popleft()
+                cur_sum += node.val
+
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
             
-            if len(sums) > depth:
-                sums[depth][1] += node.val
-            else:
-                sums.append( [depth , node.val] )
+            if max_sum < cur_sum:
+                max_sum = cur_sum
+                answer = cur_level
             
-            if node.left:
-                queue.append( (node.left, depth+1 ))
-            if node.right:
-                queue.append( (node.right, depth+1 ))
-      
-        sums.sort(key=lambda x : x[1], reverse=True)
-        
-        return sums[0][0] + 1
+            cur_level+= 1
+
+        return answer
+                
