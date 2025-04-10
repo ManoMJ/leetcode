@@ -47,7 +47,6 @@ class Solution(object):
                 smallerParent = smaller
                 smaller = smaller.left
             if smallerParent.val > smaller.val:
-                smallerParent.left = None
                 smallerParent.left = smaller.right
             else:
                 smallerParent.right = smaller.right
