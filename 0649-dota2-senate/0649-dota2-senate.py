@@ -1,25 +1,29 @@
 from collections import deque
 
-class Solution:
+class Solution :
     def predictPartyVictory(self, senate: str) -> str:
         n = len(senate)
         radiant = deque()
         dire = deque()
 
-        for i in range(n):
-            if senate[i] == 'D':
-                dire.append(i)
-            else:
+        # Step 1 : Fill queues with initial senator indices
+        for i, s in enumerate(senate):
+            if s == 'R':
                 radiant.append(i)
-        
-        while radiant and dire:
-           
-            r = radiant.popleft()
-            d = dire.popleft()
-            if r < d:
-                radiant.append(n)
             else:
-                dire.append(n)
-            n += 1
-        
+                dire.append(i)
+
+
+        # Step 2 : Process the voting rounds
+        while radiant and dire:
+            r_idx = radiant.popleft()
+            d_idx = dire.popleft()
+
+            # The senator with the smaller index votes first
+            if r_idx < d_idx:
+                radiant.append(r_idx + n)  # Re-insert with future index
+            else:
+                dire.append(d_idx + n)
+
+        # Step 3 : Determine the winner
         return "Radiant" if radiant else "Dire"
