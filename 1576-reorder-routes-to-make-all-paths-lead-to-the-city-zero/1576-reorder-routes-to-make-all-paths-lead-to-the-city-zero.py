@@ -4,26 +4,27 @@ class Solution:
     def minReorder(self, n: int, connections: List[List[int]]) -> int:
         self.result = 0
 
-        def dfs(current, parent):
-            print(parent, current)
-            for road in graph[current]:
-                if road != parent:
-                    if (current, road) in one_way:
+        def dfs(current, visited):
+             for road in graph[current]:
+                if road not in visited:
+                    if road in one_way[current]:
                         self.result += 1
-                    dfs(road, current)
+                    visited.add(road)
+                    dfs(road, visited)
 
-        one_way = set()
+        one_way = defaultdict(list)
         graph = defaultdict(list)
         for x, y in connections:
             graph[x].append(y)
             graph[y].append(x)
-            one_way.add((x, y))
+            one_way[x].append(y)
       
 
         for road in graph[0]: 
-            if (0, road) in one_way:
+            visited = {0, road}
+            if [road, 0] not in connections:
                 self.result += 1
-            dfs(road, 0)
+            dfs(road, visited)
 
         return self.result
         
