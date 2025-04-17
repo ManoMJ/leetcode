@@ -2,23 +2,26 @@ from collections import defaultdict
 
 class Solution:
     def minReorder(self, n: int, connections: List[List[int]]) -> int:
-        self.result = 0
+        # Store directed roads for fast lookup
+        directed = set ((a, b) for a, b in connections)
 
-        def dfs(current, parent):
-             for road in graph[current]:
-                if road != parent:
-                    if (current, road) in one_way:
-                        self.result += 1
-                    dfs(road, current)
-
-        one_way = set()
+        # Undirected graph representation
         graph = defaultdict(list)
-        for x, y in connections:
-            graph[x].append(y)
-            graph[y].append(x)
-            one_way.add( (x, y) )
-      
-        dfs(0, -1)
+        for a, b in connections:
+            graph[a].append(b)
+            graph[b].append(a)
 
-        return self.result
-        
+        def dfs(node, parent):
+            nonlocal count
+            for neighbor in graph[node]:
+                if neighbor == parent:
+                    continue
+                
+                # If the direction is away from node 0, we need to reverse it
+                if (node, neighbor) in directed:
+                    count += 1
+                dfs(neighbor, node)
+
+        count = 0
+        dfs(0, -1)
+        return count
