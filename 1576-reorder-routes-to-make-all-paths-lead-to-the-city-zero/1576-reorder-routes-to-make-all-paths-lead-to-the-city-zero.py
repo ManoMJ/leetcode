@@ -7,7 +7,7 @@ class Solution:
         def dfs(current, visited):
              for road in graph[current]:
                 if road not in visited:
-                    if current not in one_way[road]:
+                    if road in one_way[current]:
                         self.result += 1
                     visited.add(road)
                     dfs(road, visited)
@@ -22,7 +22,7 @@ class Solution:
 
         for road in graph[0]: 
             visited = {0, road}
-            if 0 not in one_way[road]:
+            if road in one_way[0]:
                 self.result += 1
             dfs(road, visited)
 
