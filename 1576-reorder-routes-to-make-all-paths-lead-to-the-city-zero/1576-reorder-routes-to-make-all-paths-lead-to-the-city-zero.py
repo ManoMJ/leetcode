@@ -14,13 +14,10 @@ class Solution:
         def dfs(node, parent):
             nonlocal count
             for neighbor in graph[node]:
-                if neighbor == parent:
-                    continue
-                
-                # If the direction is away from node 0, we need to reverse it
-                if (node, neighbor) in directed:
-                    count += 1
-                dfs(neighbor, node)
+                if neighbor != parent:
+                    if (node, neighbor) in directed:
+                        count += 1
+                    dfs(neighbor, node)
 
         count = 0
         dfs(0, -1)
