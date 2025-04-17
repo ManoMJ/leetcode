@@ -14,7 +14,7 @@ class Solution:
         def dfs(node, parent):
             nonlocal count
             for neighbor in graph[node]:
-                if neighbor != parent:
+                if neighbor == parent:
                     if (node, neighbor) in directed:
                         count += 1
                     dfs(neighbor, node)
