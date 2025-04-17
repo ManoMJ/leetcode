@@ -22,6 +22,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1586-longest-subarray-of-1s-after-deleting-one-element](https://github.com/ManoMJ/leetcode/tree/master/1586-longest-subarray-of-1s-after-deleting-one-element) |
 | [1798-max-number-of-k-sum-pairs](https://github.com/ManoMJ/leetcode/tree/master/1798-max-number-of-k-sum-pairs) |
 | [1833-find-the-highest-altitude](https://github.com/ManoMJ/leetcode/tree/master/1833-find-the-highest-altitude) |
+| [2422-query-kth-smallest-trimmed-number](https://github.com/ManoMJ/leetcode/tree/master/2422-query-kth-smallest-trimmed-number) |
 | [2428-equal-row-and-column-pairs](https://github.com/ManoMJ/leetcode/tree/master/2428-equal-row-and-column-pairs) |
 ## Dynamic Programming
 |  |
@@ -47,6 +48,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0435-non-overlapping-intervals](https://github.com/ManoMJ/leetcode/tree/master/0435-non-overlapping-intervals) |
 | [1777-determine-if-two-strings-are-close](https://github.com/ManoMJ/leetcode/tree/master/1777-determine-if-two-strings-are-close) |
 | [1798-max-number-of-k-sum-pairs](https://github.com/ManoMJ/leetcode/tree/master/1798-max-number-of-k-sum-pairs) |
+| [2422-query-kth-smallest-trimmed-number](https://github.com/ManoMJ/leetcode/tree/master/2422-query-kth-smallest-trimmed-number) |
 ## Hash Table
 |  |
 | ------- |
@@ -71,6 +73,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1567-maximum-number-of-vowels-in-a-substring-of-given-length](https://github.com/ManoMJ/leetcode/tree/master/1567-maximum-number-of-vowels-in-a-substring-of-given-length) |
 | [1777-determine-if-two-strings-are-close](https://github.com/ManoMJ/leetcode/tree/master/1777-determine-if-two-strings-are-close) |
 | [1894-merge-strings-alternately](https://github.com/ManoMJ/leetcode/tree/master/1894-merge-strings-alternately) |
+| [2422-query-kth-smallest-trimmed-number](https://github.com/ManoMJ/leetcode/tree/master/2422-query-kth-smallest-trimmed-number) |
 ## Design
 |  |
 | ------- |
@@ -239,4 +242,20 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0547-number-of-provinces](https://github.com/ManoMJ/leetcode/tree/master/0547-number-of-provinces) |
+## Divide and Conquer
+|  |
+| ------- |
+| [2422-query-kth-smallest-trimmed-number](https://github.com/ManoMJ/leetcode/tree/master/2422-query-kth-smallest-trimmed-number) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [2422-query-kth-smallest-trimmed-number](https://github.com/ManoMJ/leetcode/tree/master/2422-query-kth-smallest-trimmed-number) |
+## Radix Sort
+|  |
+| ------- |
+| [2422-query-kth-smallest-trimmed-number](https://github.com/ManoMJ/leetcode/tree/master/2422-query-kth-smallest-trimmed-number) |
+## Quickselect
+|  |
+| ------- |
+| [2422-query-kth-smallest-trimmed-number](https://github.com/ManoMJ/leetcode/tree/master/2422-query-kth-smallest-trimmed-number) |
 <!---LeetCode Topics End-->
