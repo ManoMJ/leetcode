@@ -18,7 +18,6 @@ class Solution(object):
         for k in trimmed.keys():
             trimmed[k].sort(key= lambda x : x[0])
 
-        print()
         for k, trim_length in queries:
             output.append(trimmed[trim_length][k-1][1])    
         return output
