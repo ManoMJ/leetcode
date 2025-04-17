@@ -4,13 +4,13 @@ class Solution:
     def minReorder(self, n: int, connections: List[List[int]]) -> int:
         self.result = 0
 
-        def dfs(current, visited):
-             for road in graph[current]:
-                if road not in visited:
+        def dfs(current, parent):
+            print(parent, current)
+            for road in graph[current]:
+                if road != parent:
                     if (current, road) in one_way:
                         self.result += 1
-                    visited.add(road)
-                    dfs(road, visited)
+                    dfs(road, current)
 
         one_way = set()
         graph = defaultdict(list)
@@ -21,10 +21,9 @@ class Solution:
       
 
         for road in graph[0]: 
-            visited = {0, road}
             if (0, road) in one_way:
                 self.result += 1
-            dfs(road, visited)
+            dfs(road, 0)
 
         return self.result
         
