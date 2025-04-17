@@ -7,22 +7,22 @@ class Solution:
         def dfs(current, visited):
              for road in graph[current]:
                 if road not in visited:
-                    if (current, road) in one_way:
+                    if road in one_way[current]:
                         self.result += 1
                     visited.add(road)
                     dfs(road, visited)
 
-        one_way = set()
+        one_way = defaultdict(list)
         graph = defaultdict(list)
         for x, y in connections:
             graph[x].append(y)
             graph[y].append(x)
-            one_way.add((x, y))
+            one_way[x].append(y)
       
 
         for road in graph[0]: 
             visited = {0, road}
-            if (0, road) in one_way:
+            if [road, 0] not in connections:
                 self.result += 1
             dfs(road, visited)
 
