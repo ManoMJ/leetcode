@@ -7,27 +7,20 @@ class Solution(object):
         :type entrance: List[int]
         :rtype: int
         """
-        directions = [ [-1, 0], [1, 0], [0, -1], [0, 1] ]
-        n = len(maze)
-        m = len(maze[0])
-
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        rows, cols = len(maze), len(maze[0])
         q = deque()
-        x, y = entrance
-        q.append( ((x, y), 0) )
+        q.append((entrance[0], entrance[1], 0))
         visited = set()
-        visited.add((x, y))
+        visited.add((entrance[0], entrance[1]))
 
         while q:
-            current, step = q.popleft()
-            x, y = current
+            x, y, steps = q.popleft()
             for dx, dy in directions:
-                new_x = x + dx
-                new_y = y + dy
-                if not (new_x < 0 or new_x >= n or new_y < 0 or new_y >= m) and maze[new_x][new_y]=='.' and (new_x, new_y) not in visited:
-                    if new_x==0 or new_x==n-1 or new_y==0 or new_y==m-1:
-                        return step+1
-                    q.append( ( (new_x, new_y), step+1) )
-                    visited.add( (new_x, new_y) )
-        
+                nx, ny = x + dx, y + dy
+                if 0 <= nx < rows and 0 <= ny < cols and maze[nx][ny] == '.' and (nx, ny) not in visited:
+                    if (nx == 0 or nx == rows - 1 or ny == 0 or ny == cols - 1) and [nx, ny] != entrance:
+                        return steps + 1
+                    visited.add((nx, ny))
+                    q.append((nx, ny, steps + 1))
         return -1
-
