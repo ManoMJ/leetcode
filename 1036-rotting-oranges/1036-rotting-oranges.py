@@ -32,7 +32,7 @@ class Solution(object):
                 if 0 <= nx < rows and 0 <= ny < cols and grid[nx][ny]==1:
                     current += 1
                     grid[nx][ny] = 2
-                    rotten.append( (nx, ny, m+1) )\
+                    rotten.append( (nx, ny, m+1) )
 
     
         return minute if answer == current else -1
