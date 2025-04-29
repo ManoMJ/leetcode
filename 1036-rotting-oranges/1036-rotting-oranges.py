@@ -1,39 +1,36 @@
 from collections import deque
 
-class Solution(object):
-    def orangesRotting(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
-        rows = len(grid)
-        cols = len(grid[0])
-        directions = [(0,-1), (0,1), (-1,0), (1,0)]
+class Solution:
+    def orangesRotting(self, grid: List[List[int]]) -> int:
 
-        answer = 0
-        rotten = deque()
-        for x in range(rows):
-            for y in range(cols):
-                if grid[x][y]==2:
-                    rotten.append( (x, y,  0) )
-                if not grid[x][y]==0:
-                    answer += 1
+        rows, cols = len(grid), len(grid[0]) 
+        queue = deque() 
+        fresh_count = 0 
+
+        # Step 1: Initialize queue and count fresh oranges 
+        for r in range(rows): 
+            for c in range(cols): 
+                if grid[r][c] == 2: 
+                    queue.append((r, c, 0)) # (row, col, minute) 
+                elif grid[r][c] == 1: 
+                    fresh_count += 1 
         
-        current = len(rotten)
-        minute = 0
-        while rotten:
-            print(rotten)
-            rx, ry, m = rotten.popleft()
-            minute = m
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)] 
+        minutes_passed = 0 
 
-            for dx, dy in directions:
-                nx, ny = rx + dx, ry + dy
-                
-                if 0 <= nx < rows and 0 <= ny < cols and grid[nx][ny]==1:
-                    current += 1
-                    grid[nx][ny] = 2
-                    rotten.append( (nx, ny, m+1) )
+        # Step 2: BFS to rot adjacent fresh oranges 
+        while queue: 
+            r, c, minute = queue.popleft() 
+            minutes_passed = minute 
 
-    
-        return minute if answer == current else -1
-                
+            # update the time 
+            for dr, dc in directions: 
+                nr, nc = r + dr, c + dc 
+
+                if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == 1: 
+                    grid[nr][nc] = 2 
+                    fresh_count -= 1 
+                    queue.append((nr, nc, minute + 1)) 
+
+        # Step 3: Check if all fresh oranges are rotted 
+        return minutes_passed if fresh_count == 0 else -1
