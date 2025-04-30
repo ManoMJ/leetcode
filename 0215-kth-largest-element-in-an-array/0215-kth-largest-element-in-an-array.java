@@ -1,28 +1,47 @@
 public class Solution {
     public int findKthLargest(int[] nums, int k) {
-        int start = 0, end = nums.length - 1, index = nums.length - k;
-        while (start < end) {
-            int pivot = partion(nums, start, end);
-            if (pivot < index) start = pivot + 1; 
-            else if (pivot > index) end = pivot - 1;
-            else return nums[pivot];
-        }
-        return nums[start];
+        return quickselect(nums, 0, nums.length - 1, k - 1);
     }
-    
-    private int partion(int[] nums, int start, int end) {
-        int pivot = start, temp;
-        while (start <= end) {
-            while (start <= end && nums[start] <= nums[pivot]) start++;
-            while (start <= end && nums[end] > nums[pivot]) end--;
-            if (start > end) break;
-            temp = nums[start];
-            nums[start] = nums[end];
-            nums[end] = temp;
+
+    private int quickselect(int[] nums, int left, int right, int k) {
+        if (left == right) {
+            return nums[left];
         }
-        temp = nums[end];
-        nums[end] = nums[pivot];
-        nums[pivot] = temp;
-        return end;
+
+        int pivotFinalIndex = partition(nums, left, right);
+
+        if (pivotFinalIndex == k) {
+            return nums[pivotFinalIndex];
+        } else if (pivotFinalIndex > k) {
+            return quickselect(nums, left, pivotFinalIndex - 1, k);
+        } else {
+            return quickselect(nums, pivotFinalIndex + 1, right, k);
+        }
+    }
+
+    private int partition(int[] nums, int left, int right) {
+        int pivotIndex = left;
+        int pivot = nums[pivotIndex];
+        int i = left + 1;
+        int j = right;
+
+        while (i <= j) {
+            while (i <= j && nums[i] >= pivot) i++;
+            while (i <= j && nums[j] < pivot) j--;
+            if (i < j) {
+                swap(nums, i, j);
+                i++;
+                j--;
+            }
+        }
+
+        swap(nums, pivotIndex, j);
+        return j;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
     }
 }
