@@ -65,6 +65,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1392-find-the-difference-of-two-arrays](https://github.com/ManoMJ/leetcode/tree/master/1392-find-the-difference-of-two-arrays) |
 | [1777-determine-if-two-strings-are-close](https://github.com/ManoMJ/leetcode/tree/master/1777-determine-if-two-strings-are-close) |
 | [1798-max-number-of-k-sum-pairs](https://github.com/ManoMJ/leetcode/tree/master/1798-max-number-of-k-sum-pairs) |
+| [2413-smallest-number-in-infinite-set](https://github.com/ManoMJ/leetcode/tree/master/2413-smallest-number-in-infinite-set) |
 | [2428-equal-row-and-column-pairs](https://github.com/ManoMJ/leetcode/tree/master/2428-equal-row-and-column-pairs) |
 ## String
 |  |
@@ -87,6 +88,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0208-implement-trie-prefix-tree](https://github.com/ManoMJ/leetcode/tree/master/0208-implement-trie-prefix-tree) |
 | [0969-number-of-recent-calls](https://github.com/ManoMJ/leetcode/tree/master/0969-number-of-recent-calls) |
+| [2413-smallest-number-in-infinite-set](https://github.com/ManoMJ/leetcode/tree/master/2413-smallest-number-in-infinite-set) |
 ## Trie
 |  |
 | ------- |
@@ -269,6 +271,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0215-kth-largest-element-in-an-array](https://github.com/ManoMJ/leetcode/tree/master/0215-kth-largest-element-in-an-array) |
+| [2413-smallest-number-in-infinite-set](https://github.com/ManoMJ/leetcode/tree/master/2413-smallest-number-in-infinite-set) |
 | [2422-query-kth-smallest-trimmed-number](https://github.com/ManoMJ/leetcode/tree/master/2422-query-kth-smallest-trimmed-number) |
 ## Radix Sort
 |  |
@@ -283,4 +286,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0399-evaluate-division](https://github.com/ManoMJ/leetcode/tree/master/0399-evaluate-division) |
+## Ordered Set
+|  |
+| ------- |
+| [2413-smallest-number-in-infinite-set](https://github.com/ManoMJ/leetcode/tree/master/2413-smallest-number-in-infinite-set) |
 <!---LeetCode Topics End-->
